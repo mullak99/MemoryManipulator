@@ -13,6 +13,7 @@ A C# Library used to manipulate memory of a process.
 # Example Code
 
 MemoryManipulator memory = new MemoryManipulator("ProcessName");
+
 memory.WriteInt(offset, bytes);
 
 //TODO - Complete this section.
