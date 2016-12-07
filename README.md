@@ -23,11 +23,16 @@ memory.WriteInt(offset, bytes);
 
 # Changelog
 
-|---| v1.0.0.0 |---|
+|---| 1.0.0.0 |---|
 
 - Initial Release
 
 
-|--| Version 1.0.1.0 |--|
+|--| 1.0.1.0 |--|
 
 - Added function to easily convert a hexadecimal address into an Int32 and Int64.
+
+
+|--| 1.0.1.1 |--|
+
+- Changed ConvertHexToInt32 & ConvertHexToInt64 from private to public
