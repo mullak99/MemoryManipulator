@@ -467,6 +467,18 @@ public class MemoryManipulator
         return BitConverter.ToInt64(buffer, 0);
     }
 
+    private Int64 ConvertHexToInt64(string Hex)
+    {
+
+        return Int64.Parse(Hex, System.Globalization.NumberStyles.HexNumber);
+    }
+
+    private Int32 ConvertHexToInt32(string Hex)
+    {
+
+        return Int32.Parse(Hex, System.Globalization.NumberStyles.HexNumber);
+    }
+
     [Flags]
     public enum ProcessAccessFlags : uint
     {
