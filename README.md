@@ -26,3 +26,8 @@ memory.WriteInt(offset, bytes);
 |---| v1.0.0.0 |---|
 
 - Initial Release
+
+
+|--| Version 1.0.1.0 |--|
+
+- Added function to easily convert a hexadecimal address into an Int32 and Int64.
