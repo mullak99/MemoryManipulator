@@ -13,6 +13,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/mullak99/MemoryManipulator</RepositoryUrl>
     <Copyright>Copyright © 2016-2019 | mullak99</Copyright>
+    <PackageTags>memory-hacking, memory-editor, memory, hacking, hacking-tool, manipulation, hack-tool</PackageTags>
   </PropertyGroup>
   
   <ItemGroup>
