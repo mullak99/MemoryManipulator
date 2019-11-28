@@ -6,7 +6,7 @@ using System.Text;
 public class MemoryManipulator
 {
     protected int _baseAddress;
-    protected Process[] _process;
+    protected Process[] _selectedProcess;
     protected ProcessModule _processModule;
     protected int _processHandle;
     protected string _processName;
@@ -56,7 +56,7 @@ public class MemoryManipulator
 
     public int DllImageAddress(string dllname)
     {
-        ProcessModuleCollection modules = this._process[0].Modules;
+        ProcessModuleCollection modules = this._selectedProcess[0].Modules;
 
         foreach (ProcessModule procmodule in modules)
         {
@@ -73,7 +73,7 @@ public class MemoryManipulator
     public int ImageAddress()
     {
         this._baseAddress = 0;
-        this._processModule = this._process[0].MainModule;
+        this._processModule = this._selectedProcess[0].MainModule;
         this._baseAddress = (int)this._processModule.BaseAddress;
         return this._baseAddress;
     }
@@ -81,7 +81,7 @@ public class MemoryManipulator
     public int ImageAddress(int pOffset)
     {
         this._baseAddress = 0;
-        this._processModule = this._process[0].MainModule;
+        this._processModule = this._selectedProcess[0].MainModule;
         this._baseAddress = (int)this._processModule.BaseAddress;
         return (pOffset + this._baseAddress);
     }
@@ -288,12 +288,12 @@ public class MemoryManipulator
     {
         if (this._processName != "")
         {
-            this._process = Process.GetProcessesByName(this._processName);
-            if (this._process.Length == 0)
+            this._selectedProcess = Process.GetProcessesByName(this._processName);
+            if (this._selectedProcess.Length == 0)
             {
                 return false;
             }
-            this._processHandle = OpenProcess(2035711, false, this._process[0].Id);
+            this._processHandle = OpenProcess(2035711, false, this._selectedProcess[0].Id);
             if (this._processHandle == 0)
             {
                 return false;
@@ -466,7 +466,6 @@ public class MemoryManipulator
 
     public Int64 ConvertHexToInt64(string Hex)
     {
-
         return Int64.Parse(Hex, System.Globalization.NumberStyles.HexNumber);
     }
 
